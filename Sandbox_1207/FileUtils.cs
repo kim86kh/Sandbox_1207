@@ -63,7 +63,20 @@ namespace Sandbox_1207
                         int tick2 = Environment.TickCount;
                         double elaspsed1 = (tick2 - tick1) / 1000.0;
                         Console.WriteLine("...." + elaspsed1.ToString() + " Sec");
-                        db.WriteLine(d + "\t"+ fi.Length+"\t" + hash);
+                       // db.WriteLine(d + "\t"+ fi.Length+"\t" + hash);
+                        db.Write(d);
+                        db.Write("\t");
+                        db.Write(fi.Length);
+                        db.Write("\t");
+                        db.Write(fi.CreationTime.ToBinary());
+                        db.Write("\t");
+                        db.Write(fi.LastWriteTime.ToBinary());
+                        db.Write("\t");
+                        db.Write(hash);
+
+                        db.Write("\n");
+
+
                     }
                 }
                 catch (UnauthorizedAccessException e)
